@@ -1,7 +1,6 @@
 [package]
-name = "beacon-client"
+name = "builder-client"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-eth2.workspace = true

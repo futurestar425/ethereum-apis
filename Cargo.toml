@@ -1,0 +1,26 @@
+[workspace]
+members = [
+  "builder-api-types",
+  "relay-client",
+  "beacon-client",
+  "relay-api-types",
+  "beacon-api-types",
+  "relay-server",
+]
+
+[workspace.dependencies]
+async-trait = "0.1"
+axum = "0.7"
+bytes = "1.6"
+eth2 = { git = "https://github.com/realbigsean/lighthouse.git", rev = "8d5b1211bfbf17dd2f3df6475609f44888259507" }
+ethereum_serde_utils = "0.5.2"
+ethereum_ssz = "0.5.4"
+ethereum_ssz_derive = "0.5.4"
+http = "1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1", features = ["raw_value"] }
+superstruct = "0.8"
+tokio = { version = "1", default-features = false, features = ["signal", "rt-multi-thread"] }
+tracing = { version = "0.1", features = ["attributes"] }
+types = { git = "https://github.com/realbigsean/lighthouse.git", rev = "8d5b1211bfbf17dd2f3df6475609f44888259507" }
+rand = "0.8"
