@@ -1,0 +1,21 @@
+[package]
+name = "relay-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+async-trait = "0.1"
+axum = { version = "0.7" }
+bytes = "1.6"
+ethereum_ssz = "0.5.4"
+http = "1"
+relay-api-types = { path = "../relay-api-types" }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["raw_value"] }
+tokio = { version = "1", default-features = false, features = [
+    "signal",
+    "rt-multi-thread",
+] }
+tracing = { version = "0.1", features = ["attributes"] }
+types = { git = "https://github.com/realbigsean/lighthouse.git", rev = "8d5b1211bfbf17dd2f3df6475609f44888259507" }
+

@@ -1,0 +1,13 @@
+[package]
+name = "relay-api-types"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+beacon-api-types = { path = "../beacon-api-types" }
+ethereum_serde_utils = "0.5.2"
+ethereum_ssz = "0.5.4"
+ethereum_ssz_derive = "0.5.4"
+serde = { version = "1", features = ["derive"] }
+superstruct = "0.8.0"
+types = { git = "https://github.com/realbigsean/lighthouse.git", rev = "8d5b1211bfbf17dd2f3df6475609f44888259507" }

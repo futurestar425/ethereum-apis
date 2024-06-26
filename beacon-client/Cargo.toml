@@ -1,0 +1,7 @@
+[package]
+name = "beacon-client"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eth2 = { git = "https://github.com/realbigsean/lighthouse.git", rev = "2d1d844beacba468fd6876dce57af20bfaf768d3", default-features = false }

@@ -1,0 +1,7 @@
+[package]
+name = "beacon-api-types"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eth2 = { git = "https://github.com/realbigsean/lighthouse.git", rev = "8d5b1211bfbf17dd2f3df6475609f44888259507", default-features = false }
