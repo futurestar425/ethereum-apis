@@ -4,3 +4,9 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+http.workspace = true
+relay-api-types = { version = "0.1.0", path = "../relay-api-types" }
+reqwest.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+types.workspace = true
