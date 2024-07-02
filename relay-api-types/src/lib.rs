@@ -1,4 +1,3 @@
-use beacon_api_types::FullPayloadContents;
 use serde::{Deserialize, Serialize};
 use serde_utils::quoted_u64::Quoted;
 use ssz_derive::{Decode, Encode};
@@ -176,7 +175,7 @@ pub struct ErrorResponse {
 
 // Builder API response types
 pub type GetValidatorsResponse = Response<Vec<ValidatorsResponse>>;
-pub type SubmitBlockResponse<E> = Response<FullPayloadContents<E>>;
+pub type SubmitBlockResponse = Response<()>;
 
 // Data API response types
 pub type GetDeliveredPayloadsResponse = Response<Vec<BidTraceV2WithTimestamp>>;

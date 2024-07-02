@@ -19,5 +19,5 @@ pub trait Builder<E: EthSpec> {
         &self,
         query_params: SubmitBlockQueryParams,
         body: SubmitBlockRequest<E>,
-    ) -> SubmitBlockResponse<E>;
+    ) -> SubmitBlockResponse;
 }
