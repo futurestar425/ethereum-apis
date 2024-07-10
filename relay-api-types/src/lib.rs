@@ -159,6 +159,7 @@ pub struct BidTraceV2WithTimestamp {
 // Response types common
 
 #[derive(Debug, PartialEq, Serialize, Deserialize)]
+#[serde(untagged)]
 #[must_use]
 pub enum Response<T> {
     Success(T),
