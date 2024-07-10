@@ -10,7 +10,7 @@ use types::eth_spec::EthSpec;
 #[derive(Debug)]
 pub enum Error {
     Reqwest(reqwest::Error),
-    InvalidJson(serde_json::Error),
+    InvalidJson(serde_json::Error, String),
     ServerMessage(String),
     StatusCode(http::StatusCode),
 }
@@ -18,12 +18,6 @@ pub enum Error {
 impl From<reqwest::Error> for Error {
     fn from(e: reqwest::Error) -> Self {
         Error::Reqwest(e)
-    }
-}
-
-impl From<serde_json::Error> for Error {
-    fn from(e: serde_json::Error) -> Self {
-        Error::InvalidJson(e)
     }
 }
 
@@ -48,7 +42,8 @@ impl RelayClient {
         let text = response.text().await;
 
         if status.is_success() {
-            serde_json::from_str(&text?).map_err(Into::into)
+            let text = text?;
+            serde_json::from_str(&text).map_err(|e| Error::InvalidJson(e, text))
         } else if let Ok(message) = text {
             Err(Error::ServerMessage(message))
         } else {
